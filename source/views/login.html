@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="large-6 columns">
+        
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h1>{{'LOGINTITLE' | translate}}:</h1>
+            <p>
+                {{'LOGINDESC' | translate}} 
+                <code>factory</code> 
+                {{'LOGINDESC2' | translate}}
+            </p>
+
+            <h3> {{status}}</h3>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <span class="input-group-addon">username</span>
+                        <input type="text" name="username" id="username" ng-model="username" value="admin" class="form-control">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">password</span>
+                        <input type="password" name="password" value="admin" id="password" class="form-control" ng-model="password">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <br>
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-primary" ng-click="login()" class="form-control">Login</button>
+                    <button type="button" class="btn btn-default" ng-click="clear" class="form-control">clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
