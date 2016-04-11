@@ -37,6 +37,16 @@ Start node server then start fake API for the project
 npm start
 npm run json
 ```
+
+# Enable dev modes on Chrome for Service worker  (NOTE: `--ignore-certificate-errors` is reuiqred)
+```
+// windows
+start chrome --user-data-dir=/tmp/foo --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=http://locahost:3030 
+
+// ubuntu
+google-chrome --user-data-dir=/tmp/foo --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=http://locahost:3030
+```
+
 access sample project seed at development state with [http://localhost:3030/](http://localhost:3030/)
 
 # Testing

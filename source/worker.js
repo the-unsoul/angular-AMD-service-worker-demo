@@ -5,7 +5,7 @@
     global.toolbox.precache([
         './js/companion.js',
     ]);
-    global.toolbox.options.debug = true;
+    // global.toolbox.options.debug = true;
 
     global.toolbox.router.get('/', global.toolbox.networkFirst);
     // global.toolbox.router.get(/(.html|.js|.css|.json)/, global.toolbox.cacheFirst);
