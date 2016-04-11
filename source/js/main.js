@@ -15,7 +15,7 @@ requirejs.config({
         'ng-map'            : 'vendor/angular-google-maps/angular-google-maps.min',
         'lodash'            : 'vendor/angular-google-maps/lodash.min',
         'angular-resource'  : 'vendor/angular-resource/angular-resource',
-        'bootstrap-tpls'    : 'vendor/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min',
+        'bootstrap-tpls'    : 'vendor/angular-bootstrap/ui-bootstrap-tpls.min',
         'ng-animate'        : 'vendor/angular-animate/angular-animate',
         'locale'            : 'vendor/angular-i18n/angular-locale_en',
         'angular-translate' : 'vendor/angular-translate/angular-translate.min',
