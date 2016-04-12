@@ -1,40 +1,39 @@
-<div class="row">
-   <div class="small-12 columns"  ng-controller="testCtrl" ng-cloak>
-      
-   </div>
-</div>
+<section>
+    <h3 class="layout-padding">Service Worker on web app (angularJS & requireJS)</h3>
+    <md-button class="md-raised" ng-click="getTodo()" ng-show="!isLoad">
+        LOAD TODO
+    </md-button>
+    <md-button class="md-raised md-primary" ng-click="saveTodo()" ng-show="isLoad">
+        SAVE TODO
+    </md-button>
+</section>
+<section ng-show="isLoad">
+    <md-subheader class="md-primary">The total todo(s) we have: <b>{{t_length()}}</b></md-subheader>
+    <!-- TODO list -->
+    <md-list>
+        <md-divider></md-divider>
+        <md-list-item class="md-1-line" ng-repeat="(key, todo) in todos" >
+            <md-checkbox class="md-primary" id={{key}}
+            ng-model="todo.done" aria-label="{{todo.name}}">
+                <!-- {{todo.name}} <br> -->
+            </md-checkbox>
+            <label for="{{key}}" class="noselect ng-done-{{todo.done}}">{{todo.name}}</label>
+            <md-divider></md-divider>
+        </md-list-item>
+    </md-list>
+</section>
 
-<div class="container">
-   <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-         <input class="form-control" type="text" name="uname" id="" ng-model="appName">
-         <h2>{{appName}}</h2>
-         <h6>{{date | date: 'longDate'}}</h6>
-         <h3>
-            {{'TODOCOUNT' | translate}} <b>{{t_length()}}</b>
-         </h3>
-         <p>{{'TODOINTRO' | translate}} <code>angular</code> + <code>requireJS</code> + <code>angularAMD</code></p>
-         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <ul>
-
-               <li class="toggle" ng-repeat="(key, todo) in todos | filter:newTodo">
-                  <input  type="checkbox" name="done" id="{{key}}" ng-model="todo.done">
-                  <label for="{{key}}" class="ng-done-{{todo.done}}">{{todo.name}}</label>
-               </li>
-            </ul>
-            
-
-            <div class="row">
-               <div class="input-group">
-                  <span class="input-group-addon">new Todo name:</span>
-                  <input type="text" name="addTodo" class="form-control" ng-model="newTodo">   
-               </div>
-               <br>
-               
-               <button type="button" class="btn btn-primary" ng-click="addTodo()">Add todo</button>
-               <button type="button" class="btn btn-default" ng-click="removeDone()">remove Dones</button>
-            </div>
-         </div>
-      </div>
-   </div>      
-</div>   
+<!-- new TODO -->
+<section ng-show="isLoad">
+    <md-input-container md-no-float class="md-block" class="layout-padding">
+        <label>New todo name</label>
+        <input ng-model="newTodo">
+    </md-input-container>
+    <md-button class="md-raised md-primary" ng-click="addTodo()"
+    ng-disabled="!newTodo">
+        Add
+    </md-button>
+    <md-button class="md-raised" ng-click="removeDone()">
+        Remove Dones
+    </md-button>
+</section>

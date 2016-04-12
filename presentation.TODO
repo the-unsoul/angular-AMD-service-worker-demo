@@ -1,0 +1,59 @@
+I - Marketing points:
+
+ 1.Presentation of Progressive Web Apps (marketing points):
+   The history of web apps progressing
+     => how the web app was first made.
+     => how it got first adaptation in to mobile platforms (responsive)
+     => then many attempts have been made to make web apps run faster/smoother on mobile. (example: cordova, ionic, react native)
+     => point out all of the efforts was to make web applications run on all the places. 
+
+   The situations: when packaging all the content of a website is not so convinient under the point of deloyment and accessibility. 
+     => sharing and acessibility is more complex than a website. Where all can be done under an URL/link
+     => points out the efforts require to install and app compare with accessing a website with an URL (time consumption, data consumption)
+     => the concerns of user with mobile app. Where some worrying about over-broad permission demands. Or some worry about the available space of their devices. And some concern about privacy.
+     => The cost of making an user switch from web to mobile application. (the the FIKSU chart. Point out the price is 1$ to 2$ per user)
+     => the steps that users need to go through then they want ot use the app
+       - load store
+       - find app in store
+       - click install
+       - allow permissions
+       - download/wait...
+       - use
+       http://blog.gaborcselle.com/2012/10/every-step-costs-you-20-of-users.html point out for each step it cost 20% of users.
+
+   The solutions
+     => using statistics of google about average app used per month and website used per month (25apps vs. 100sites)
+     => URL/website does not have and concerning above, it is original put the security in front. And users always in the control of a website at any moment.
+     => Progressive web apps has been born:
+       - Progressive Web Apps are experiences that combine the best of the web and the best of apps. They are useful to users from the very first visit in a browser tab, no install required. As the user progressively builds a relationship with the App over time, it becomes more and more powerful. It loads quickly, even on flaky networks, sends relevant push notifications, has an icon on the home screen and loads as top-level, full screen experience.
+     => Progressive website are:
+       - Progressive - Work for every user, regardless of browser choice because they’re built with progressive enhancement as a core tenet.
+       - Responsive - Fit any form factor: desktop, mobile, tablet, or whatever is next.
+       - Connectivity independent - Enhanced with service workers to work offline or on low quality networks.
+       - App-like - Feel like an app to the user with app-style interactions and navigation because it's built on the app shell model.
+       - Fresh - Always up-to-date thanks to the service worker update process.
+       - Safe - Served via HTTPS to prevent snooping and ensure content hasn’t been tampered with.
+       - Discoverable - Are identifiable as “applications” thanks to W3C manifests and service worker registration scope allowing search engines to find them.
+       - Re-engageable - Make re-engagement easy through features like push notifications.
+       - Installable - Allow users to “keep” apps they find most useful on their home screen without the hassle of an app store.
+       - Linkable - Easily share via URL and not require complex installation.
+
+   Is it convinient
+     => it has started with many news/magazine companies, when they completely shut down native apps and focus on the website. 
+       ☐ http://www.vox.com/ https://magazine.atavist.com/ ... @provided_example
+     => talk about an example of user landing on a website and seeing the app proposal popup asking user to install native app. It is sounds like "wait for 3 minutes and use the app"
+       ☐ a slide with a webpage, which have proposal popup asking user to install app.
+
+
+
+     => play clip examples of of add to home screen. 
+       ☐ Linh @provide_clip
+     => play a clip of push notification (on desktop)
+       ☐ Linh @provide_clip
+     => play a clip of "app shell" example. (using offline feature)
+       ☐ Linh @provide_clip
+     => play a clip of handling ajax requests
+       ☐ Linh @provide_clip
+
+
+     

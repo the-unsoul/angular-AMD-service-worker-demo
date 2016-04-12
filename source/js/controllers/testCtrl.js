@@ -6,49 +6,14 @@
 */
 
 define(['app'], function(app) {
-	app.controller('testCtrl', ['$scope', '$timeout' , function ($scope, $timeout) {
-		$scope.appName = 'requireJS + angularJS';
-	 	$scope.todos = [{
-	 		name: "more security research",
-	 		done: false
-	 	},{
-	 		name: "considering UI Bootstrap" ,
-	 		done: true
-	 	},{
-	 		name: "try tests with nesting route",
-	 		done: false
-	 	},{
-	 		name: 'try google map',
-	 		done: true
-	 	},{
-	 		name: 'try chart.js',
-	 		done: true
-	 	},{
-	 		name: 'testing and decided to use it or not',
-	 		done: false
-	 	},{
-	 		name: 'settup Angular animation for all pages',
-	 		done: true
-	 	},{
- 			name: 'learn github.com/lynndylanhurley/ng-token-auth#about-this-module',
- 			done: false
-	 	},{
-	 		name: 'learn about karma',
- 			done: true
-	 	},{
-	 		name: 'learn about protractor',
- 			done: false
-	 	},{
-	 		name: 'learn angular forms',
-	 		done: false
-	 	},{
-	 		name: 'learn more filter - ngFilter',
-	 		done: false
-	 	},{
-	 		name: 'more directive',
-	 		done: false
-	 	}];
+	app.controller('testCtrl', 
+	['$scope', '$timeout', '$http' , '$mdToast',
+	function ($scope, $timeout, $http, $mdToast) {
+		$scope.appName = 'Service Worker on web app (angularJS & requireJS)';
+		$scope.todos = [];
 	 	$scope.date = new Date();
+	 	$scope.isLoad = false;
+	 	$scope.save = false;
 	 	$scope.t_length =  function () {
 	 		return $scope.todos.length;
 	 	};
@@ -58,6 +23,7 @@ define(['app'], function(app) {
 	 			return;
 	 		$scope.todos.push({name: $scope.newTodo,done: false});
 	 		$scope.newTodo = '';
+	 		$scope.saveTodo();
 	 	};
 	 		
 
@@ -67,6 +33,37 @@ define(['app'], function(app) {
 	 		});
 	 		 
 	 	};
+	 	$scope.autoLoad = false;
+	 	$scope.$watch('autoLoad', function (nv) {
+	 		!!nv && $scope.getTodo();
+	 	})
+	 	$scope.getTodo = function() {
+	 		$http({
+	 			method: 'GET',
+	 			url: 'http://localhost:3000/demo/todo'
+	 		}).then(function (res) {
+	 			$scope.todos = res.data.todos;
+	 			$scope.isLoad = true;
+	 		});
+	 	};
 
+	 	var toast;
+	 	$scope.saveTodo = function () {
+	 		$http({
+	 			method: 'PUT',
+	 			url: 'http://localhost:3000/demo/todo',
+	 			headers: {
+	 				'Content-Type': 'application/json'
+	 			},
+	 			data: {todos: $scope.todos}
+	 		}).then(function (res) {
+	 			toast = $mdToast.simple().textContent('Saved!').position('top left').hideDelay(5000);
+	 			$mdToast.show(toast);
+	 			$scope.getTodo();
+	 		}, function (error) {
+	 			toast = $mdToast.simple().textContent("Cannot save, you're being OFFLINE!").position('top left').hideDelay(5000);
+	 			$mdToast.show(toast);
+	 		})
+	 	};
 	}]);
 });

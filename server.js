@@ -48,7 +48,7 @@ var debug = require('debug')('MyExpressServer:server');
 var http = require('http');
 var server = http.createServer(app);
 
-var port = parseInt(process.env.PORT, 10) || 3030;
+var port = parseInt(process.env.PORT, 10) || 80;
 app.set('port', port);
 
 

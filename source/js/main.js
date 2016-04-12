@@ -15,8 +15,12 @@ requirejs.config({
         'ng-map'            : 'vendor/angular-google-maps/angular-google-maps.min',
         'lodash'            : 'vendor/angular-google-maps/lodash.min',
         'angular-resource'  : 'vendor/angular-resource/angular-resource',
+
         'bootstrap-tpls'    : 'vendor/angular-bootstrap/ui-bootstrap-tpls.min',
+        'angular-aria'      : 'vendor/angular-aria/angular-aria',
+        'angular-material'  : 'vendor/angular-material/angular-material',
         'ng-animate'        : 'vendor/angular-animate/angular-animate',
+
         'locale'            : 'vendor/angular-i18n/angular-locale_en',
         'angular-translate' : 'vendor/angular-translate/angular-translate.min',
         'dynamic-locale'    : 'vendor/angular-dynamic-locale/tmhDynamicLocale.min',
@@ -54,6 +58,8 @@ requirejs.config({
         'angular-cookie'    : ['angular'],
         'ng-token-auth'     : ['angular-cookie'],
         'locale'            : ['angular'],
+        'angular-material'  : ['angular', 'angular-aria', 'ng-animate'],
+        'angular-aria' : ['angular'],
 
         // export
         jquery: {

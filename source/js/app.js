@@ -5,18 +5,19 @@ define([
     'ng-animate', 
     'angular-route', 
     'angular-resource', 
-    'bootstrap-tpls', 
     'angular-translate', 
-    'dynamic-locale'
+    'dynamic-locale',
+    'angular-aria',
+    'angular-material',
     ], function(angularAMD, translations) {
 
     var app = angular.module('angularTest', [
         'ngAnimate', 
         'ngRoute', 
         'ngResource', 
-        'ui.bootstrap', 
         'pascalprecht.translate', 
         'tmh.dynamicLocale',
+        'ngMaterial'
     ]);
 
     /* ------ {{ config }} ------------------------------------ */

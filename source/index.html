@@ -4,17 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AnguarAMD</title>
+    <title>Service Worker</title>
     <link rel="iconicon" href="favicon.ico">
     <meta name="description" content="">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="js/vendor/angular-ui-grid/ui-grid.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="js/vendor/angular-ui-grid/ui-grid.css"> -->
+    <link rel="stylesheet" href="js/vendor/angular-material/angular-material.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/requirejs/require.js" data-main="js/main"></script>
     <!-- <script src="js/vendor/modernizr.js"></script> -->
-
     <!--[if lt IE 9]>
    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
    <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
@@ -26,6 +26,7 @@
     ul {
         list-style-type: none;
     }
+    
     .ng-done-true {
         text-decoration: line-through;
         color: #999;
@@ -42,84 +43,16 @@
     <!--[if lt IE 8]>
    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-
     <!-- Content start! -->
-
-    <nav class="navbar navbar-default" role="navigation" ng-controller="homeCtrl">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://github.com/the-unsoul/angular-requireJS">Angular + Require JS</a>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                <span translate-cloack>TODO App</span>
+            </h2>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav" ng-cloak>
-                <li><a ng-click="logIt()">{{'USERNAME' | translate}}: </a>
-                </li>
-                <li class="currentUser"><a><b>{{currentUser}}</b></a>
-                </li>
-            </ul>
-
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="{{'SEARCH' | translate}}" ng-cloak>
-                </div>
-                <button type="submit" ng-click="i18n()" class="btn btn-default" ng-cloak>{{'SUBMIT' | translate}}</button>
-                <!-- Single button -->
-                <div class="btn-group" dropdown is-open="status.isopen">
-                    <button ng-cloak type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
-                        {{'LANGUAGE' | translate}} 
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="" ng-click="translate('en')">English</a>
-                        </li>
-                        <li><a href="" ng-click="translate('vi')">Vietnamese</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="">Auto detect</a>
-                        </li>
-                    </ul>
-                </div>
-            </form>
-            <ul class="nav navbar-nav navbar-right" ng-cloak>
-                <li class="{{isActive('/home')}}">
-                    <a href="#/home">{{'HOME' | translate}}</a>
-                </li>
-                <li class="{{isActive('/login')}}">
-                    <a href="#/login">{{loginButton}}</a>
-                </li>
-                <li class="{{isActive('/grid')}}">
-                    <a href="#/grid">ng-ui-grid</a>
-                </li>
-                <li class="{{isActive('/map')}}">
-                    <a href="#/map">ng-map</a>
-                </li>
-                <li class="{{isActive('/whoosh')}}">
-                    <a href="#/whoosh">Whoosh</a>
-                </li>
-                <li class="{{isActive('/tab')}}">
-                    <a href="#/tab">Tab</a>
-                </li>
-
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-
-    <div data-ng-view class="myFade"></div>
+    </md-toolbar>
+    <md-content data-ng-view class="myFade"></md-content>
     <!-- Content end! -->
-
-
-
-
-
 </body>
 
 </html>
